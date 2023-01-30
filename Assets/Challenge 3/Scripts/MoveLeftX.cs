@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveLeftX : MonoBehaviour
 {
-    public float speed;
+    /*public float speed;
     private PlayerControllerX playerControllerScript;
     private float leftBound = -10;
 
@@ -28,6 +28,14 @@ public class MoveLeftX : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+    }  */
+
+    public float speed = 30f;
+
+    private void Update()
+    {
+        transform.Translate(Vector3.left * Time.deltaTime * speed);
 
     }
 }

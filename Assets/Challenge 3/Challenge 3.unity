@@ -128,11 +128,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 403952, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
   m_PrefabInstance: {fileID: 954209497}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &66121944 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19860484, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
-  m_PrefabInstance: {fileID: 954209497}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,9 +251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce26e6539c8b45f0aff009711deae77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefabs:
-  - {fileID: 8579601760348528630, guid: 0752829c2e3ba4cb78049ff40067a24f, type: 3}
-  - {fileID: 11368019182273911, guid: 1db47c5ef25154fb1806822c25335042, type: 3}
+  obstaclePrefab:
+  - {fileID: 6791508254258205711, guid: db2a5c867009bcd4da8c5155f35075e6, type: 3}
+  - {fileID: 8048312317383191756, guid: 09ee2c73cc7d84b4d80b18f626359953, type: 3}
 --- !u!4 &460865717
 Transform:
   m_ObjectHideFlags: 0
@@ -267,7 +262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460865715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 13, z: 0}
+  m_LocalPosition: {x: 19, y: 11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -300,7 +295,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &534669904
 Camera:
   m_ObjectHideFlags: 0
@@ -366,7 +361,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 883634e1c7cb04070aecb71779ed7e1d, type: 3}
@@ -724,11 +719,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 402300, guid: 079954accd64b32419ec069129c81273, type: 3}
   m_PrefabInstance: {fileID: 2097113909}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1171260740 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19821056, guid: 079954accd64b32419ec069129c81273, type: 3}
-  m_PrefabInstance: {fileID: 2097113909}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1292757554
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,13 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3da77984db434cf7a7209211eb746ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: 0
-  floatForce: 20
-  explosionParticle: {fileID: 1171260740}
-  fireworksParticle: {fileID: 66121944}
-  moneySound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
-  explodeSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
-  jumpForce: 0
+  jumpForce: 10
 --- !u!1001 &2097113909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -960,6 +944,18 @@ PrefabInstance:
     - target: {fileID: 19877906, guid: 079954accd64b32419ec069129c81273, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19902532, guid: 079954accd64b32419ec069129c81273, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19926198, guid: 079954accd64b32419ec069129c81273, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19943340, guid: 079954accd64b32419ec069129c81273, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079954accd64b32419ec069129c81273, type: 3}
@@ -1073,7 +1069,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672443118734094}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29e6556bfaaf8448faa6f3f29def86ef, type: 3}
   m_Name: 
@@ -1086,7 +1082,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672443118734094}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}

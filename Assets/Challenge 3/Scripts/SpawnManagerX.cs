@@ -4,31 +4,48 @@ using UnityEngine;
 
 public class SpawnManagerX : MonoBehaviour
 {
-    public GameObject[] objectPrefabs;
-    private float spawnDelay = 2;
-    private float spawnInterval = 1.5f;
+    /* public GameObject[] objectPrefabs;
+     private float spawnDelay = 2;
+     private float spawnInterval = 1.5f;
 
-    private PlayerControllerX playerControllerScript;
+     private PlayerControllerX playerControllerScript;
 
-    // Start is called before the first frame update
+     // Start is called before the first frame update
+     void Start()
+     {
+         InvokeRepeating("SpawnObstacle", spawnDelay, spawnInterval);
+         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerControllerX>();
+     }
+
+     // Spawn obstacles
+     void SpawnObjects ()
+     {
+         // Set random spawn location and random object index
+         Vector3 spawnLocation = new Vector3(30, Random.Range(5, 15), 0);
+         int randomidx = Random.Range(0, objectPrefabs.Length);
+
+         // If game is still active, spawn new object
+         if (!playerControllerScript.gameOver)
+         {
+             Instantiate(objectPrefabs[randomidx], spawnLocation, objectPrefabs[randomidx].transform.rotation);
+         }
+
+     } */
+
+    public GameObject[] obstaclePrefab;
+    private float startDelay = 2;
+    private float repeatRate = 1.5f;
+
     void Start()
     {
-        InvokeRepeating("SpawnObstacle", spawnDelay, spawnInterval);
-        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerControllerX>();
+        InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
+      
     }
-
-    // Spawn obstacles
-    void SpawnObjects ()
+    private void SpawnObstacle()
     {
-        // Set random spawn location and random object index
+        int randomIdx = Random.Range(0, obstaclePrefab.Length);
         Vector3 spawnLocation = new Vector3(30, Random.Range(5, 15), 0);
-        int randomidx = Random.Range(0, objectPrefabs.Length);
-
-        // If game is still active, spawn new object
-        if (!playerControllerScript.gameOver)
-        {
-            Instantiate(objectPrefabs[randomidx], spawnLocation, objectPrefabs[randomidx].transform.rotation);
-        }
+        Instantiate(obstaclePrefab[randomIdx], transform.position, obstaclePrefab[randomIdx].transform.rotation);
 
     }
 }

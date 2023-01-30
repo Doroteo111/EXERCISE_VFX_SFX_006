@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
 {
-    public bool gameOver;
+    /*public bool gameOver;
 
     public float floatForce;
     private float gravityModifier = 1.5f;
@@ -71,5 +71,34 @@ public class PlayerControllerX : MonoBehaviour
     private void Jump()
     {
         playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    */
+
+    private Rigidbody _rigidbody;
+    public float jumpForce = 10f;
+
+    private void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+       
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) )
+        {
+            _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            
+        }
+        PowerImpusle();
+    }
+
+    private void PowerImpusle()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)==true)
+        {
+            _rigidbody.AddForce(Vector3.up * 20, ForceMode.Impulse);
+        }
     }
 }
