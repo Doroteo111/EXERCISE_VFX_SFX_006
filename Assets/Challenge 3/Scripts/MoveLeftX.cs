@@ -33,9 +33,24 @@ public class MoveLeftX : MonoBehaviour
 
     public float speed = 30f;
 
+    private PlayerControllerX playerControllerScript;
+    public float leftBound;
+
+    void Start()
+    {
+        playerControllerScript = FindObjectOfType<PlayerControllerX>();
+    }
+
     private void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * speed);
+        if (!playerControllerScript.gameOver)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed, Space.World);
+        }
 
+        if (transform.position.x < leftBound && !gameObject.CompareTag("Background"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

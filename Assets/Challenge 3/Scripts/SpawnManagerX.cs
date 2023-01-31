@@ -36,15 +36,26 @@ public class SpawnManagerX : MonoBehaviour
     private float startDelay = 2;
     private float repeatRate = 1.5f;
 
+    private PlayerControllerX playerControllerScript;
+
     void Start()
     {
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
+        playerControllerScript = FindObjectOfType<PlayerControllerX>();
       
+    }
+
+    private void Update()
+    {
+        if (playerControllerScript.gameOver)
+        {
+            CancelInvoke("SpawnObstacle");
+        }
     }
     private void SpawnObstacle()
     {
         int randomIdx = Random.Range(0, obstaclePrefab.Length);
-        Vector3 spawnLocation = new Vector3(30, Random.Range(5, 15), 0);
+       
         Instantiate(obstaclePrefab[randomIdx], transform.position, obstaclePrefab[randomIdx].transform.rotation);
 
     }

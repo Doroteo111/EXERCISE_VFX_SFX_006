@@ -78,6 +78,11 @@ public class PlayerControllerX : MonoBehaviour
     private Rigidbody _rigidbody;
     public float jumpForce = 10f;
 
+    public bool gameOver;
+
+    public ParticleSystem explosionParticle;
+    public ParticleSystem fireworksParticle;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -86,19 +91,39 @@ public class PlayerControllerX : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) )
+        if (Input.GetKeyDown(KeyCode.Space) && !gameOver )
         {
             _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             
         }
-        PowerImpusle();
+       
     }
 
-    private void PowerImpusle()
+    private void OnCollisionEnter(Collision otherCollider)
     {
-        if (Input.GetKeyDown(KeyCode.Space)==true)
+        if (otherCollider.gameObject.CompareTag("Bomb"))
         {
-            _rigidbody.AddForce(Vector3.up * 20, ForceMode.Impulse);
+            explosionParticle.Play();
+            GameOver();
+            Debug.Log("Game Over!");
+            Destroy(otherCollider.gameObject);
+            Destroy(gameObject,1); //time to destroy
+
         }
+        if (otherCollider.gameObject.CompareTag("Money"))
+        {
+            fireworksParticle.Play();
+            Destroy(otherCollider.gameObject);
+            
+        }
+        else if (otherCollider.gameObject.CompareTag("Ground"))
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        gameOver = true;
     }
 }
