@@ -36,6 +36,9 @@ public class SpawnManagerX : MonoBehaviour
     private float startDelay = 2;
     private float repeatRate = 1.5f;
 
+    private float spawnRangeY = 14f;
+    private float spawnPosX = -19f;
+
     private PlayerControllerX playerControllerScript;
 
     void Start()
@@ -55,8 +58,18 @@ public class SpawnManagerX : MonoBehaviour
     private void SpawnObstacle()
     {
         int randomIdx = Random.Range(0, obstaclePrefab.Length);
-       
-        Instantiate(obstaclePrefab[randomIdx], transform.position, obstaclePrefab[randomIdx].transform.rotation);
+        RandomSpawnPos();
 
+        if (!playerControllerScript.gameOver)
+        {
+            Instantiate(obstaclePrefab[randomIdx], transform.position, obstaclePrefab[randomIdx].transform.rotation);
+        }
+                 
+    }
+
+    private Vector3 RandomSpawnPos()
+    {
+        float randomX = Random.Range(-spawnRangeY, spawnRangeY);
+        return new Vector3(spawnPosX, randomX, 0);
     }
 }

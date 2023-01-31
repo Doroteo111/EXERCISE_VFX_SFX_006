@@ -77,24 +77,31 @@ public class PlayerControllerX : MonoBehaviour
 
     private Rigidbody _rigidbody;
     public float jumpForce = 10f;
+    private float gravityModifier = 1.5f;
 
     public bool gameOver;
+    private float result;
 
     public ParticleSystem explosionParticle;
     public ParticleSystem fireworksParticle;
 
+    private AudioSource playerAudio;
+    public AudioClip moneySound;
+    public AudioClip explodeSound;
+    public AudioClip jumpSound;
+
     private void Start()
     {
+        Physics.gravity *= gravityModifier;
         _rigidbody = GetComponent<Rigidbody>();
-       
+        playerAudio = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !gameOver )
         {
-            _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            
+            Jump(); 
         }
        
     }
@@ -104,6 +111,7 @@ public class PlayerControllerX : MonoBehaviour
         if (otherCollider.gameObject.CompareTag("Bomb"))
         {
             explosionParticle.Play();
+            playerAudio.PlayOneShot(explodeSound, 1.0f);
             GameOver();
             Debug.Log("Game Over!");
             Destroy(otherCollider.gameObject);
@@ -113,15 +121,24 @@ public class PlayerControllerX : MonoBehaviour
         if (otherCollider.gameObject.CompareTag("Money"))
         {
             fireworksParticle.Play();
+            playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(otherCollider.gameObject);
+            result++;
+            Debug.Log($"You have collected {result} coins");
             
         }
         else if (otherCollider.gameObject.CompareTag("Ground"))
         {
             GameOver();
+            Debug.Log("Game Over!");
         }
     }
-
+    
+    private void Jump()
+    {
+        _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        playerAudio.PlayOneShot(jumpSound, 1.0f);
+    }
     private void GameOver()
     {
         gameOver = true;
