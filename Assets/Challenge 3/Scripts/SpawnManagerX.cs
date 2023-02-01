@@ -62,7 +62,7 @@ public class SpawnManagerX : MonoBehaviour
 
         if (!playerControllerScript.gameOver)
         {
-            Instantiate(obstaclePrefab[randomIdx], transform.position, obstaclePrefab[randomIdx].transform.rotation);
+            Instantiate(obstaclePrefab[randomIdx], RandomSpawnPos(), obstaclePrefab[randomIdx].transform.rotation);
         }
                  
     }
