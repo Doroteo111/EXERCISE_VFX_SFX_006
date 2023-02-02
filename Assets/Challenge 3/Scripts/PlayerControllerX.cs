@@ -129,7 +129,7 @@ public class PlayerControllerX : MonoBehaviour
         }
         else if (otherCollider.gameObject.CompareTag("Ground"))
         {
-            GameOver();
+            //GameOver();
             Debug.Log("Game Over!");
         }
     }
