@@ -136,7 +136,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8048312317383191756}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -211,7 +211,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -757,7 +757,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 12.244451
+    angle: 3.1541274
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0.5
@@ -843,7 +843,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.30305478
+      value: 0.07509032
       mode: 0
       spread: 0
       speed:
@@ -962,7 +962,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8.77
+      scalar: 6.95
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1068,7 +1068,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -1392,7 +1392,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1458,8 +1458,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     timeMode: 0
     fps: 30
     frameOverTime:
@@ -1577,7 +1577,38 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: -302638273, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1794507013, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1347813322, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 814682463, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -63550711, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1758343150, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 892409036, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1347631230, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1712299092, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1088535969, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1824338240, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1030828172, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1028596946, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -104385729, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 2132871059, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -2041532965, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -1804965860, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 2096728954, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -1415874006, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 764482229, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -898126295, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1049863218, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -93598449, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -2027909776, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -177055315, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -2077582471, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -1258581881, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1163808909, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 77924027, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: -803955617, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 1648660790, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
+    - sprite: {fileID: 773581586, guid: f7acfc793898ea8498cf8c16053b7d2d, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -3641,7 +3672,7 @@ ParticleSystem:
     separateAxes: 0
     range: {x: 0, y: 1}
   ColorBySpeedModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -4856,7 +4887,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4881,7 +4912,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 0.03
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
